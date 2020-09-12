@@ -1,0 +1,23 @@
+{
+  "devices": [
+    {
+      "id": "Testing_Device_1",
+      "tempMin": 0,
+      "tempMax": 10,
+      "failsafe": false
+    },
+    {
+      "id": "Testing_Device_2",
+      "tempMin": 10,
+      "tempMax": 15,
+      "failsafe": false
+    },
+    {
+      "id": "Testing_Device_3",
+      "tempMin": 10,
+      "tempMax": 15,
+      "failsafe": true,
+      "insertInto19InchCabinet":  true
+    }
+  ]
+}

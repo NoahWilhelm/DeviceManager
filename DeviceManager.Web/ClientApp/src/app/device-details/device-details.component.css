@@ -1,0 +1,37 @@
+.device-details {
+    background: white;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    min-width: 70%;
+}
+
+.details-table{
+    padding: 5px;
+}
+
+.details-edit-button {
+  float: right;
+}
+
+table {
+    width: 100%;
+}
+
+table tr td{
+    padding: 10px 0px;
+}
+
+table tr td:first-of-type {
+    font-weight: bold;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}

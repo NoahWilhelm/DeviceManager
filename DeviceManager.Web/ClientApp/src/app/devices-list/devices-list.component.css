@@ -1,0 +1,36 @@
+#devicesList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.device-item {
+  position: relative;
+  flex: 1 0 21%;
+  margin: 0px 5px;
+  background: #ffffff;
+  padding: 5px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.device-item-delete-btn {
+    position: absolute;
+    top: 5px;
+    right: 7px;
+    width: 15px;
+    height: 15px;
+}
+
+.device-item-name {
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.device-item-deviceTypeId {
+  font-size: 14px;
+  color: #6c6c6c;
+}
+
+.red { color: red; }
+.green { color: green; }

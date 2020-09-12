@@ -1,0 +1,128 @@
+<div class="device-details">
+
+  <div class="details-header">
+    <button class="btn btn-grey" (click)="goBack()"><fa-icon [icon]="backIcon"></fa-icon></button>
+    <button class="btn-primary btn details-edit-button" (click)="editButtonClick()">{{ this.editButtonText }}</button>
+    <div style="clear: both"></div>
+  </div>
+
+  <div *ngIf="entry && !isInEditMode" class="details-table">
+
+    <table>
+      <tr>
+        <td>Id:</td>
+        <td>{{ entry.id }}</td>
+      </tr>
+      <tr>
+        <td>Name:</td>
+        <td>{{ entry.name }}</td>
+      </tr>
+      <tr>
+        <td>DeviceTypeId:</td>
+        <td>{{ entry.deviceTypeId }}</td>
+      </tr>
+      <tr>
+        <td>TempMin:</td>
+        <td>{{ entry.tempMin }}</td>
+      </tr>
+      <tr>
+        <td>TempMax:</td>
+        <td>{{ entry.tempMax }}</td>
+      </tr>
+      <tr>
+        <td>InstallationPosition:</td>
+        <td>{{ entry.installationPosition }}</td>
+      </tr>
+      <tr>
+        <td>RotationAxisNumber:</td>
+        <td>{{ entry.rotationAxisNumber }}</td>
+      </tr>
+      <tr>
+        <td>Failsafe:</td>
+        <td [ngClass]="(entry.failsafe)?'green':'red'"><fa-icon [icon]="getBoolIcon(entry.failsafe)" ></fa-icon></td>
+      </tr>
+      <tr>
+        <td>InsertInto19InchCabinet:</td>
+        <td [ngClass]="(entry.insertInto19InchCabinet)?'green':'red'"><fa-icon [icon]="getBoolIcon(entry.insertInto19InchCabinet)"></fa-icon></td>
+      </tr>
+      <tr>
+        <td>MotionEnable:</td>
+        <td [ngClass]="(entry.motionEnable)?'green':'red'"><fa-icon [icon]="getBoolIcon(entry.motionEnable)"></fa-icon></td>
+      </tr>
+      <tr>
+        <td>SiplusCatalog:</td>
+        <td [ngClass]="(entry.siplusCatalog)?'green':'red'"><fa-icon [icon]="getBoolIcon(entry.siplusCatalog)"></fa-icon></td>
+      </tr>
+      <tr>
+        <td>SimaticCatalog:</td>
+        <td [ngClass]="(entry.simaticCatalog)?'green':'red'"><fa-icon [icon]="getBoolIcon(entry.simaticCatalog)"></fa-icon></td>
+      </tr>
+      <tr>
+        <td>AdvancedEnvironmentalConditions:</td>
+        <td [ngClass]="(entry.advancedEnvironmentalConditions)?'green':'red'"><fa-icon [icon]="getBoolIcon(entry.advancedEnvironmentalConditions)"></fa-icon></td>
+      </tr>
+      <tr>
+        <td>TerminalElement:</td>
+        <td [ngClass]="(entry.terminalElement)?'green':'red'"><fa-icon [icon]="getBoolIcon(entry.terminalElement)"></fa-icon></td>
+      </tr>
+    </table>
+
+  </div>
+
+  <form *ngIf="entry != null && isInEditMode">
+    <div class="form-group">
+      <label for="id">Id</label>
+      <input [(ngModel)]="entry.id" type="text" name="id" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input [(ngModel)]="entry.name" type="text" name="name" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="DeviceTypeId">DeviceTypeId</label>
+      <input [(ngModel)]="entry.deviceTypeId" type="text" name="deviceTypeId" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="TempMin">TempMin</label>
+      <input [(ngModel)]="entry.tempMin" type="number" name="tempMin" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="TempMax">TempMax</label>
+      <input [(ngModel)]="entry.tempMax" type="number" name="tempMax" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="installationPosition">InstallationPosition</label>
+      <input [(ngModel)]="entry.installationPosition" type="text" name="installationPosition" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="installationPosition">RotationAxisNumber</label>
+      <input [(ngModel)]="entry.rotationAxisNumber" type="number" name="rotationAxisNumber" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="positionAxisNumber">PositionAxisNumber</label>
+      <input [(ngModel)]="entry.positionAxisNumber" type="number" name="positionAxisNumber" class="form-control" />
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" [(ngModel)]="entry.failsafe" name="failsafe"> Failsafe</label>
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" [(ngModel)]="entry.insertInto19InchCabinet" name="insertInto19InchCabinet"> InsertInto19InchCabinet</label>
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" [(ngModel)]="entry.siplusCatalog" name="siplusCatalog"> SiplusCatalog</label>
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" [(ngModel)]="entry.simaticCatalog" name="simaticCatalog"> SimaticCatalog</label>
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" [(ngModel)]="entry.motionEnable" name="motionEnable"> MotionEnable</label>
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" [(ngModel)]="entry.advancedEnvironmentalConditions" name="advancedEnvironmentalConditions"> AdvancedEnvironmentalConditions</label>
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" [(ngModel)]="entry.terminalElement" name="terminalElement"> TerminalElement</label>
+    </div>
+  </form>
+
+</div>
