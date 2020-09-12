@@ -4,7 +4,6 @@ import { Device } from '../models/Device';
 import { DevicesService } from '../services/DevicesService';
 
 import { faCheck, faTimes, faCoffee, faTrash, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import { BoolIconPipe } from '../pipes/BoolIconPipe';
 
 @Component({
   selector: 'app-device-details',

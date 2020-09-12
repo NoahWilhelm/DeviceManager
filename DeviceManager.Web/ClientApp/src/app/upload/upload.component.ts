@@ -12,7 +12,7 @@ export class UploadComponent implements OnInit {
   @ViewChild('uploadInput', { static: true })
   uploadInput: ElementRef;
 
-  @Output() onUploadSucceed = new EventEmitter<object>();
+  @Output() onUploadSucceed = new EventEmitter<Device[]>();
   @Output() onUploadFail = new EventEmitter<object>();
 
   constructor(private jsonUploadService: JsonUploadService) { }
@@ -26,6 +26,12 @@ export class UploadComponent implements OnInit {
 
   }
 
+  reset() {
+
+    this.uploadInput.nativeElement.value = null;
+
+  }
+
   filesChanged(files: FileList) {
 
     var firstFile = files[0];
@@ -34,9 +40,11 @@ export class UploadComponent implements OnInit {
       .subscribe(
         (response) => {
           this.onUploadSucceed.emit(response);
+          this.reset();
         },
         (error) => {
           this.onUploadFail.emit(error);
+          this.reset();
         }
       );
 

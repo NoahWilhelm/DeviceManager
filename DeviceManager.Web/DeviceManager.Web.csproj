@@ -31,7 +31,6 @@
 
   <ItemGroup>
     <None Remove="ClientApp\src\app\models\Device.ts" />
-    <None Remove="ClientApp\src\app\pipes\BoolIconPipe.ts" />
     <None Remove="ClientApp\src\app\services\DevicesService.ts" />
     <None Remove="ClientApp\src\app\services\JsonUploadService.ts" />
   </ItemGroup>
@@ -43,7 +42,6 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\models\Device.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\pipes\BoolIconPipe.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\services\DevicesService.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\services\JsonUploadService.ts" />
   </ItemGroup>

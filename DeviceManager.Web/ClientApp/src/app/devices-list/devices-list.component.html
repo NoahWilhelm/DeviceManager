@@ -1,7 +1,7 @@
 <div id="devicesList" *ngIf="devices != null && devices.length > 0; else noElements">
-  <div class="device-item" *ngFor="let device of devices" (click)="showDeviceDetails(device)">
+  <div class="device-item" *ngFor="let device of devices">
     <div class="device-item-delete-btn" (click)="deleteDevice(device)"><fa-icon [icon]="trashIcon"></fa-icon></div>
-    <div class="device-item-name">{{ device.name }}</div>
+    <div class="device-item-name" (click)="showDeviceDetails(device)">{{ device.name }}</div>
     <div class="device-item-deviceTypeId">{{ device.deviceTypeId }}</div>
     Failsafe: <fa-icon [class]="getIconColorByDevice(device)" [icon]="this.getIconClsByDevice(device)"></fa-icon>
   </div>

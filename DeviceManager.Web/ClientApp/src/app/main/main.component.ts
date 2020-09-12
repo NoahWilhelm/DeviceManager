@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { DevicesListComponent } from '../devices-list/devices-list.component';
 import { UploadComponent } from '../upload/upload.component';
+import { Device } from '../models/Device';
 
 @Component({
   selector: 'app-main',
@@ -20,14 +21,14 @@ export class MainComponent implements OnInit, AfterViewInit {
   ngOnInit() {
   }
 
-  uploadSucceeded(obj: object) {
+  uploadSucceeded(devices: Device[]) {
 
-    this.devicesList.loadDevices();
+    devices.forEach(device => this.devicesList.devices.push(device));
 
   }
 
   uploadFailed(obj: object) {
-    console.log('failed', obj);
+    alert(obj["error"]);
   }
 
 }

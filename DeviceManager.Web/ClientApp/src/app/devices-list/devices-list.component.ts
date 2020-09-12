@@ -25,9 +25,9 @@ export class DevicesListComponent implements OnInit, AfterViewInit {
 
   getIconColorByDevice(device: Device) {
     if (device.failsafe) {
-      return 'red';
-    } else {
       return 'green';
+    } else {
+      return 'red';
     }
   }
 

@@ -11,7 +11,6 @@ import { DevicesListComponent } from './devices-list/devices-list.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import { DeviceDetailsComponent } from './device-details/device-details.component';
-import { BoolIconPipe } from './pipes/BoolIconPipe';
 
 @NgModule({
   declarations: [
@@ -19,8 +18,7 @@ import { BoolIconPipe } from './pipes/BoolIconPipe';
     MainComponent,
     UploadComponent,
     DevicesListComponent,
-    DeviceDetailsComponent,
-    BoolIconPipe
+    DeviceDetailsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

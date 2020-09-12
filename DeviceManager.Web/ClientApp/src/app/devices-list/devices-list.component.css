@@ -1,11 +1,12 @@
 #devicesList {
   display: flex;
   flex-wrap: wrap;
+  padding-bottom: 25px;
 }
 
 .device-item {
   position: relative;
-  flex: 1 0 21%;
+  flex-basis: calc(25% - 10px);
   margin: 0px 5px;
   background: #ffffff;
   padding: 5px;
