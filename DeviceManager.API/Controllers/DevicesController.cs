@@ -29,6 +29,10 @@ namespace DeviceManager.API.Controllers
             } else
             {
                 var findDevice = await devicesRepository.FindByIdAsync(id.Value);
+
+                if (findDevice == null)
+                    return NotFound("This device does not exist!");
+
                 return Ok(findDevice);
             }
         }

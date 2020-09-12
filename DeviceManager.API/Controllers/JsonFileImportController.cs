@@ -1,4 +1,6 @@
 ﻿using DeviceManager.Core.DeviceImport.Abstractions;
+using DeviceManager.Core.DeviceImport.Exceptions;
+using DeviceManager.Core.Devices.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -24,14 +26,34 @@ namespace DeviceManager.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Post()
         {
-            var files = httpContextAccessor.HttpContext.Request.Form.Files;
+
+            var resultDevices = new List<Device>();
+            IFormFileCollection files;
+
+            try
+            {
+                files = httpContextAccessor.HttpContext.Request.Form.Files;
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            
 
             foreach (var file in files)
             {
-                await deviceFileImportService.ImportByFormFileAsync(file);
+                try
+                {
+                    var newDevices = await deviceFileImportService.ImportByFormFileAsync(file);
+                    resultDevices.AddRange(newDevices);
+                }
+                catch (InvalidImportFileTextException ex)
+                {
+                    return BadRequest(ex.Message);
+                }
             }
 
-            return Ok();
+            return Ok(resultDevices);
         }
 
     }
