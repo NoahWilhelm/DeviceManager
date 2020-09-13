@@ -66,5 +66,22 @@ namespace DeviceManager.Testing.API.Tests.UnitTests
 
         }
 
+        [Fact]
+        public async Task Test_Delete_Method_With_Valid_Id()
+        {
+
+            var deleteResult = await testingInstance.Delete(1);
+            var getResult = await testingInstance.Get();
+
+            var expectedDevicesCount = DevicesRepositoryMock.GetTestingDevices().Count() - 1;
+            var getResultAsOkResult = Assert.IsAssignableFrom<OkObjectResult>(getResult);
+            var getResultAsDevicesList = getResultAsOkResult.Value as IQueryable<Device>;
+            var devicesCount = getResultAsDevicesList.Count();
+
+            Assert.IsAssignableFrom<OkResult>(deleteResult);
+
+            Assert.Equal(devicesCount, expectedDevicesCount);
+        }
+
     }
 }
