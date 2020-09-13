@@ -33,7 +33,7 @@ namespace DeviceManager.Testing.API.Tests.IntegrationTests
 
             var postRequestContent = MakeJsonFileHttpContent(testingFilePath);
 
-            var postFileResult = await this.testingClient.PostAsync("/jsonFileImport/", postRequestContent);
+            var postFileResult = await this.testingClient.PostAsync("/api/jsonFileImport/", postRequestContent);
             var postFileResultText = await postFileResult.Content.ReadAsStringAsync();
 
             var postFileResultTextAsDeviceList = JsonSerializer.Deserialize<List<Device>>(postFileResultText);
@@ -52,7 +52,7 @@ namespace DeviceManager.Testing.API.Tests.IntegrationTests
 
             var httpContent = MakeJsonFileHttpContent(testingFilePath);
 
-            var result = await this.testingClient.PostAsync("/jsonFileImport/", httpContent);
+            var result = await this.testingClient.PostAsync("/api/jsonFileImport/", httpContent);
             var isBadRequest = result.StatusCode == System.Net.HttpStatusCode.BadRequest;
 
             Assert.True(isBadRequest);
@@ -63,7 +63,7 @@ namespace DeviceManager.Testing.API.Tests.IntegrationTests
         public async Task Test_Empty_Import()
         {
 
-            var result = await this.testingClient.PostAsync("/jsonFileImport/", null);
+            var result = await this.testingClient.PostAsync("/api/jsonFileImport/", null);
             var isBadRequest = result.StatusCode == System.Net.HttpStatusCode.BadRequest;
 
             Assert.True(isBadRequest);

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace DeviceManager.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class DevicesController : ControllerBase
     {
 

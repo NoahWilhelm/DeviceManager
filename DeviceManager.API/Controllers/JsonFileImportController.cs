@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace DeviceManager.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class JsonFileImportController : ControllerBase
     {
         private readonly IHttpContextAccessor httpContextAccessor;

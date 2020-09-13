@@ -28,7 +28,7 @@ namespace DeviceManager.Testing.API.Tests.IntegrationTests
         {
 
             // Act
-            var result = await testingClient.GetAsync("/devices/");
+            var result = await testingClient.GetAsync("/api/devices/");
             var isOkay = result.StatusCode == System.Net.HttpStatusCode.OK;
             var resultText = await result.Content.ReadAsStringAsync();
             var resultAsDeviceList = JsonSerializer.Deserialize<List<Device>>(resultText, DefaultJsonSerializerOptions.IgnoreCase());
@@ -45,7 +45,7 @@ namespace DeviceManager.Testing.API.Tests.IntegrationTests
         {
 
             // Act
-            var result = await testingClient.GetAsync("/devices/0");
+            var result = await testingClient.GetAsync("/api/devices/0");
             var isOkay = result.StatusCode == System.Net.HttpStatusCode.OK;
             var resultText = await result.Content.ReadAsStringAsync();
             var resultAsDevice = JsonSerializer.Deserialize<Device>(resultText, DefaultJsonSerializerOptions.IgnoreCase());
@@ -54,6 +54,19 @@ namespace DeviceManager.Testing.API.Tests.IntegrationTests
             // Assert
             Assert.True(isOkay);
             Assert.Equal(expectedDeviceName, resultAsDevice.Name);
+
+        }
+
+        [Fact]
+        public async Task Test_Get_With_Invalid_Id()
+        {
+
+            // Act
+            var result = await testingClient.GetAsync("/api/devices/100");
+            var isNotFound = result.StatusCode == System.Net.HttpStatusCode.NotFound;
+
+            // Assert
+            Assert.True(isNotFound);
 
         }
     }

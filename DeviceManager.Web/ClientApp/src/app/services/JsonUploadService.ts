@@ -13,7 +13,7 @@ export class JsonUploadService {
     const formData: FormData = new FormData();
     formData.append('jsonFile', file, file.name);
 
-    return this.httpClient.post<Device[]>("/jsonFileImport", formData);
+    return this.httpClient.post<Device[]>("/api/jsonFileImport", formData);
 
   }
 

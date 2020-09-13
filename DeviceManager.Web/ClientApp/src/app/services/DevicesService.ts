@@ -12,19 +12,19 @@ export class DevicesService {
 
   getAllDevices(): Observable<Device[]> {
 
-    return this.httpClient.get<Device[]>("/devices");
+    return this.httpClient.get<Device[]>("/api/devices");
 
   }
 
   getDeviceById(id: Number): Observable<Device> {
 
-    return this.httpClient.get<Device>("/devices/" + id.toString());
+    return this.httpClient.get<Device>("/api/devices/" + id.toString());
 
   }
 
   deleteDevice(device: Device): Observable<any> {
 
-    return this.httpClient.delete<any>("/devices/" + device.entry_Id.toString());
+    return this.httpClient.delete<any>("/api/devices/" + device.entry_Id.toString());
 
   }
 
