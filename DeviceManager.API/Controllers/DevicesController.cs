@@ -1,8 +1,6 @@
 ﻿using DeviceManager.Core.Devices.Abstractions;
+using DeviceManager.Core.Devices.Models;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace DeviceManager.API.Controllers
@@ -47,6 +45,17 @@ namespace DeviceManager.API.Controllers
             await devicesRepository.CommitAsync();
 
             return Ok();
+
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put(int id, [FromBody] Device model)
+        {
+
+            var device = devicesRepository.Update(model);
+            await devicesRepository.CommitAsync();
+
+            return Ok(device);
 
         }
 

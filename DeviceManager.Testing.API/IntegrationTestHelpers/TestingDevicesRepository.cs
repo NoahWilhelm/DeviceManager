@@ -17,6 +17,17 @@ namespace DeviceManager.Testing.API.IntegrationTestHelpers
         public TestingDevicesRepository()
         {
             devices = new List<Device>();
+            AddTestingDevices();
+        }
+
+        private void AddTestingDevices()
+        {
+            this.devices.Add(new Device()
+            {
+                Entry_Id = 0,
+                Failsafe = true,
+                Name = "Testing Device 0"
+            });
         }
 
         public async Task<Device> AddAsync(Device item)

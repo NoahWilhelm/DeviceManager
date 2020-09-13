@@ -36,7 +36,6 @@ namespace DeviceManager.Testing.API.Tests.UnitTests
             var resultList = asOkObjectResult.Value as IQueryable<Device>;
             var resultListSorted = resultList.OrderBy(x => x.Entry_Id).ToList();
 
-
             Assert.Equal(expectedList, resultListSorted);
 
         }

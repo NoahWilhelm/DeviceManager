@@ -10,13 +10,13 @@ using Xunit;
 
 namespace DeviceManager.Testing.API.Tests.IntegrationTests
 {
-    public class TestImport : IClassFixture<TestingWebApplicationFactory<TestStartup>>
+    public class JsonFileImportControllerTest : IClassFixture<TestingWebApplicationFactory<TestStartup>>
     {
 
         private readonly HttpClient testingClient;
         private readonly TestingWebApplicationFactory<TestStartup> factory;
 
-        public TestImport(TestingWebApplicationFactory<TestStartup> factory)
+        public JsonFileImportControllerTest(TestingWebApplicationFactory<TestStartup> factory)
         {
 
             this.factory = factory;
@@ -36,16 +36,15 @@ namespace DeviceManager.Testing.API.Tests.IntegrationTests
             var postFileResult = await this.testingClient.PostAsync("/jsonFileImport/", postRequestContent);
             var postFileResultText = await postFileResult.Content.ReadAsStringAsync();
 
-            Assert.True(postFileResult.StatusCode == System.Net.HttpStatusCode.OK);
-
             var postFileResultTextAsDeviceList = JsonSerializer.Deserialize<List<Device>>(postFileResultText);
 
+            Assert.True(postFileResult.StatusCode == System.Net.HttpStatusCode.OK);
             Assert.True(postFileResultTextAsDeviceList.Count == 3);
 
         }
 
         [Fact]
-        public async Task Test_Invalid_File_Import()
+        public async Task Test_Import_By_File_Invalid_File()
         {
             
             var currentDirectory = Directory.GetCurrentDirectory();
