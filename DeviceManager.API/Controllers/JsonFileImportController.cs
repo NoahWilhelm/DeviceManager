@@ -23,7 +23,9 @@ namespace DeviceManager.API.Controllers
             this.deviceFileImportService = deviceFileImportService;
         }
 
-        [HttpPost]
+        [HttpPost(Name="Post_JsonFile")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Post()
         {
 

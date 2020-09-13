@@ -1,8 +1,8 @@
 <div class="device-details">
 
   <div class="details-header">
-    <button class="btn btn-grey" (click)="goBack()"><fa-icon [icon]="backIcon"></fa-icon></button>
-    <button class="btn-primary btn details-edit-button" (click)="editButtonClick()">{{ this.editButtonText }}</button>
+    <button class="btn btn-grey btn-back" (click)="goBack()" tooltip="Zurück"><fa-icon [icon]="backIcon" tooltip="Zurück"></fa-icon></button>
+    <!--<button class="btn-primary btn details-edit-button" (click)="editButtonClick()">{{ this.editButtonText }}</button>-->
     <div style="clear: both"></div>
   </div>
 
@@ -69,7 +69,7 @@
 
   </div>
 
-  <form *ngIf="entry != null && isInEditMode">
+  <!--<form *ngIf="entry != null && isInEditMode">
     <div class="form-group">
       <label for="id">Id</label>
       <input [(ngModel)]="entry.id" type="text" name="id" class="form-control" />
@@ -123,6 +123,6 @@
     <div class="checkbox">
       <label><input type="checkbox" [(ngModel)]="entry.terminalElement" name="terminalElement"> TerminalElement</label>
     </div>
-  </form>
+  </form>-->
 
 </div>

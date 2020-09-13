@@ -1,10 +1,12 @@
 ﻿using DeviceManager.Core.Devices.Abstractions;
 using DeviceManager.Core.Devices.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace DeviceManager.API.Controllers
 {
+    [Produces("application/json")]
     [ApiController]
     [Route("api/[controller]")]
     public class DevicesController : ControllerBase
@@ -17,8 +19,13 @@ namespace DeviceManager.API.Controllers
             this.devicesRepository = devicesRepository;
         }
 
+        ///<summary>
+        ///Returns a list of all devices or requested device
+        ///</summary>
         [HttpGet("{id?}")]
-        public async Task<IActionResult> Get(int? id)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> Get(int? id = null)
         {
             if (!id.HasValue)
             {
@@ -35,11 +42,16 @@ namespace DeviceManager.API.Controllers
             }
         }
 
+        ///<summary>
+        ///Deletes specific device
+        /// </summary>
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int? id)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> Delete(int id)
         {
 
-            var device = await devicesRepository.FindByIdAsync(id.Value);
+            var device = await devicesRepository.FindByIdAsync(id);
             devicesRepository.Remove(device);
             
             await devicesRepository.CommitAsync();
@@ -48,9 +60,18 @@ namespace DeviceManager.API.Controllers
 
         }
 
+        ///<summary>
+        ///Edits device
+        ///</summary>
         [HttpPut("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Put(int id, [FromBody] Device model)
         {
+
+            var findDevice = await this.devicesRepository.FindByIdAsync(id);
+
+            if (findDevice == null) return NotFound("Device does not exist");
 
             var device = devicesRepository.Update(model);
             await devicesRepository.CommitAsync();

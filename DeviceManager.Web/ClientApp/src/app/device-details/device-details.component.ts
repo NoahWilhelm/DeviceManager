@@ -38,7 +38,7 @@ export class DeviceDetailsComponent implements OnInit {
   }
 
   loadEntry() {
-    this.devicesService.getDeviceById(this.entryId).subscribe(result => this.entry = result);
+    this.devicesService.getDeviceById(this.entryId).subscribe(result => this.entry = result, error => this.router.navigateByUrl(''));
   }
 
   goBack() {

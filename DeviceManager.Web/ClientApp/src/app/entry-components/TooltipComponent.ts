@@ -2,9 +2,9 @@ import { Component, Input } from "@angular/core";
 
 @Component({
   selector: 'x-tooltip',
-  template: '{{ text }}',
+  template: '<div>{{ text }}</div>',
   styles: [
-    "x-tooltip { padding: 2px; background: black; color: white; }"
+    "div { padding: 5px 15px; background: rgba(0, 0, 0, 0.6); color: white; border: 1px solid rgba(0, 0, 0, 0.6); border-radius: 5px; }"
   ]
 })
 export class TooltipComponent {

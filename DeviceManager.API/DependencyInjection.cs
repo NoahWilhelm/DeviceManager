@@ -1,4 +1,5 @@
 ﻿using DeviceManager.API.Controllers;
+using DeviceManager.API.Swagger.OperationFilters;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -12,14 +13,27 @@ namespace DeviceManager.API
 
         public static void AddDeviceManagerApi(this IServiceCollection services)
         {
+
             services
                 .AddControllers()
                 .AddApplicationPart(typeof(DevicesController).Assembly)
                 .AddControllersAsServices();
+
+            services.AddSwaggerGen(conf => {
+                conf.OperationFilter<SwaggerJsonFileOperationFilter>();
+            });
+
         }
 
         public static void UseDeviceManagerApi(this IApplicationBuilder app)
         {
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c => {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "DeviceManager API");
+            });
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

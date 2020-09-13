@@ -8,7 +8,8 @@ a {
 }
 
 body {
-    background: #eaeaea;
+  background: #eaeaea;
+  min-height: 100vh;
 }
 
 code {
@@ -20,3 +21,30 @@ code {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+
+.footer {
+  width: 100%;
+  background: black;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  text-align: center;
+  padding: 10px 0px;
+}
+
+  .footer ul {
+    margin: 0;
+    list-style: none;
+    padding: 5px 0px 5px 0px;
+  }
+
+    .footer ul li {
+      list-style: none;
+      display: inline-block;
+      color: white;
+    }
+
+      .footer ul li a {
+        color: white;
+        margin: 0px 10px;
+      }

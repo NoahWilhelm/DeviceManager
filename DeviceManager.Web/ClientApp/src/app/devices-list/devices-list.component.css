@@ -20,6 +20,13 @@
     right: 7px;
     width: 15px;
     height: 25px;
+    transition: 0.2s ease-in-out;
+    color:black;
+}
+
+.device-item-delete-btn:hover {
+    color:red;
+    transition: 0.2s ease-in-out;
 }
 
 .device-item-name {

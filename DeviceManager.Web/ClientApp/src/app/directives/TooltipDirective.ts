@@ -40,6 +40,11 @@ export class TooltipDirective implements OnInit {
 
   }
 
+  @HostListener('click')
+  hideOnClick() {
+    this.hide();
+  }
+
   @HostListener('mouseout')
   hide() {
 

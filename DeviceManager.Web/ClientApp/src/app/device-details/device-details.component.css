@@ -1,15 +1,15 @@
 .device-details {
-    background: white;
-    padding: 10px;
-    position: absolute;
-    top: 50%;
-    left:50%;
-    transform: translate(-50%, -50%);
-    min-width: 70%;
+  background: white;
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 70%;
 }
 
-.details-table{
-    padding: 5px;
+.details-table {
+  padding: 5px;
 }
 
 .details-edit-button {
@@ -17,16 +17,26 @@
 }
 
 table {
-    width: 100%;
+  width: 100%;
 }
 
-table tr td{
+  table tr td {
     padding: 10px 0px;
+  }
+
+    table tr td:first-of-type {
+      font-weight: bold;
+    }
+
+.btn-back {
+  background: white;
+  transition: 0.2s ease-in-out;
 }
 
-table tr td:first-of-type {
-    font-weight: bold;
-}
+  .btn-back:hover {
+    background: #e4e4e4;
+    transition: 0.2s ease-in-out;
+  }
 
 .red {
   color: red;
