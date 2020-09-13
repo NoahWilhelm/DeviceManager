@@ -30,6 +30,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\directives\TooltipDirective.ts" />
+    <None Remove="ClientApp\src\app\entry-components\TooltipComponent.ts" />
     <None Remove="ClientApp\src\app\models\Device.ts" />
     <None Remove="ClientApp\src\app\services\DevicesService.ts" />
     <None Remove="ClientApp\src\app\services\JsonUploadService.ts" />
@@ -41,6 +43,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\directives\TooltipDirective.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\entry-components\TooltipComponent.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\models\Device.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\services\DevicesService.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\services\JsonUploadService.ts" />

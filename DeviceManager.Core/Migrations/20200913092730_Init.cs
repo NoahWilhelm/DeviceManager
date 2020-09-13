@@ -24,9 +24,9 @@ namespace DeviceManager.Core.Migrations
                     SiplusCatalog = table.Column<bool>(nullable: false),
                     SimaticCatalog = table.Column<bool>(nullable: false),
                     RotationAxisNumber = table.Column<int>(nullable: false),
-                    positionAxisNumber = table.Column<int>(nullable: false),
-                    AdvancedEnvironmentalConditions = table.Column<bool>(nullable: false),
-                    TerminalElement = table.Column<bool>(nullable: false)
+                    PositionAxisNumber = table.Column<int>(nullable: false),
+                    AdvancedEnvironmentalConditions = table.Column<bool>(nullable: true),
+                    TerminalElement = table.Column<bool>(nullable: true)
                 },
                 constraints: table =>
                 {

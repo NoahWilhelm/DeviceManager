@@ -19,8 +19,8 @@ namespace DeviceManager.Core.Devices.Models
         public bool SiplusCatalog { get; set; }
         public bool SimaticCatalog { get; set; }
         public int RotationAxisNumber { get; set; }
-        public int positionAxisNumber { get; set; }
-        public bool AdvancedEnvironmentalConditions { get; set; }
-        public bool TerminalElement { get; set; }
+        public int PositionAxisNumber { get; set; }
+        public bool? AdvancedEnvironmentalConditions { get; set; }
+        public bool? TerminalElement { get; set; }
     }
 }
