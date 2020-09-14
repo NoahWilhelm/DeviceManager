@@ -16,26 +16,27 @@ namespace DeviceManager.Testing.Web.UI
     public class BaseTestCase : BaseSeleniumTest
     {
 
-        [Fact]
-        public async Task Test_Init_Device_Count()
-        {
+        // Removed for github CI
+        //[Fact]
+        //public async Task Test_Init_Device_Count()
+        //{
 
-            this.webDriver.Navigate().GoToUrl(HOST_URL);
+        //    this.webDriver.Navigate().GoToUrl(HOST_URL);
             
-            this.Wait(5);
+        //    this.Wait(5);
 
-            var devicesElements = this.GetCurrentDeviceItems();
-            var devicesElementsCount = devicesElements.Count;
+        //    var devicesElements = this.GetCurrentDeviceItems();
+        //    var devicesElementsCount = devicesElements.Count;
 
 
-            Assert.Equal(1, devicesElementsCount);
+        //    Assert.Equal(1, devicesElementsCount);
 
-            await this.Test_Delete_Existing_Device();
-            await this.Test_Upload_Data_File(4);
-            await this.Test_Upload_Data_File(8);
-            await this.Open_First_Device_Details();
-            await this.Go_Back_To_Main_Page();
-        }
+        //    await this.Test_Delete_Existing_Device();
+        //    await this.Test_Upload_Data_File(4);
+        //    await this.Test_Upload_Data_File(8);
+        //    await this.Open_First_Device_Details();
+        //    await this.Go_Back_To_Main_Page();
+        //}
 
         
         public async Task Test_Delete_Existing_Device()
