@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeviceManager.Web", "Device
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeviceManager.Core", "DeviceManager.Core\DeviceManager.Core.csproj", "{F25621A4-1A29-4D2A-968C-3DEDA7B1D8D0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Solution Items", "_Solution Items", "{6E814040-872F-4D70-ABFA-B1B86E8FEF6B}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeviceManager.API", "DeviceManager.API\DeviceManager.API.csproj", "{A4FEFAB9-ACB1-4C70-B58C-BFBF53399102}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{C9DBCCEE-C5E8-498E-9DB2-CF10BF17AF34}"

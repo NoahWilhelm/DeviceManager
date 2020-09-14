@@ -7,7 +7,7 @@ namespace DeviceManager.Core.Config
 {
     public static class DefaultJsonSerializerOptions
     {
-        public static JsonSerializerOptions IgnoreCase()
+        public static JsonSerializerOptions GetIgnoreCase()
         {
             return new JsonSerializerOptions()
             {

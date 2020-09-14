@@ -31,7 +31,7 @@ namespace DeviceManager.Testing.API.Tests.IntegrationTests
             var result = await testingClient.GetAsync("/api/devices/");
             var isOkay = result.StatusCode == System.Net.HttpStatusCode.OK;
             var resultText = await result.Content.ReadAsStringAsync();
-            var resultAsDeviceList = JsonSerializer.Deserialize<List<Device>>(resultText, DefaultJsonSerializerOptions.IgnoreCase());
+            var resultAsDeviceList = JsonSerializer.Deserialize<List<Device>>(resultText, DefaultJsonSerializerOptions.GetIgnoreCase());
             var resultDevicesCount = resultAsDeviceList.Count;
 
             // Assert
@@ -48,7 +48,7 @@ namespace DeviceManager.Testing.API.Tests.IntegrationTests
             var result = await testingClient.GetAsync("/api/devices/0");
             var isOkay = result.StatusCode == System.Net.HttpStatusCode.OK;
             var resultText = await result.Content.ReadAsStringAsync();
-            var resultAsDevice = JsonSerializer.Deserialize<Device>(resultText, DefaultJsonSerializerOptions.IgnoreCase());
+            var resultAsDevice = JsonSerializer.Deserialize<Device>(resultText, DefaultJsonSerializerOptions.GetIgnoreCase());
             var expectedDeviceName = "Testing Device 0";
 
             // Assert

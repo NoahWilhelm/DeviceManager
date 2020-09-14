@@ -1,4 +1,5 @@
-﻿using DeviceManager.Core.DeviceImport.Abstractions;
+﻿using DeviceManager.Core.Config;
+using DeviceManager.Core.DeviceImport.Abstractions;
 using DeviceManager.Core.DeviceImport.Exceptions;
 using DeviceManager.Core.DeviceImport.Model;
 using DeviceManager.Core.Devices.Abstractions;
@@ -29,11 +30,7 @@ namespace DeviceManager.Core.DeviceImport.Services
 
             try
             {
-                var result = JsonSerializer.Deserialize<DeviceImportModel>(jsonText, new JsonSerializerOptions()
-                {
-                    IgnoreNullValues = true,
-                    PropertyNameCaseInsensitive = true
-                });
+                var result = JsonSerializer.Deserialize<DeviceImportModel>(jsonText, DefaultJsonSerializerOptions.GetIgnoreCase());
 
                 if (result.Devices == null) throw new InvalidImportFileTextException("Text is not a valid DeviceImportModel");
 
