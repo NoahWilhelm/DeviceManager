@@ -14,7 +14,7 @@ export class Device {
   simaticCatalog: boolean;
   rotationAxisNumber: number;
   positionAxisNumber: number;
-  terminalElement: boolean;
-  advancedEnvironmentalConditions: boolean;
+  terminalElement: boolean | null;
+  advancedEnvironmentalConditions: boolean | null;
 
 }

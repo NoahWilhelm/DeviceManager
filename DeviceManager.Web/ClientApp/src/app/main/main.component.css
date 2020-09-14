@@ -1,9 +1,15 @@
 h1{
-    text-align:center;
+    text-align:left;
     display: block;
     margin: 15px 0px;
 }
 
 #uploadButton{
     float: right;
+    margin-top:4px;
+}
+
+#devicesList {
+    float: left;
+    width: 80%;
 }

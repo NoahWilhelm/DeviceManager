@@ -9,7 +9,7 @@ a {
 
 body {
   background: #eaeaea;
-  min-height: 100vh;
+  min-height: 100%;
 }
 
 code {
@@ -20,6 +20,10 @@ code {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
+}
+
+.main-content {
+    margin-left: 0px;
 }
 
 .footer {

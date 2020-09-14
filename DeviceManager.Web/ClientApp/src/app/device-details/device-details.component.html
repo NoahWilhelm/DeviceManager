@@ -57,11 +57,11 @@
         <td>SimaticCatalog:</td>
         <td [ngClass]="(entry.simaticCatalog)?'green':'red'"><fa-icon [icon]="getBoolIcon(entry.simaticCatalog)"></fa-icon></td>
       </tr>
-      <tr>
+      <tr *ngIf="entry.advancedEnvironmentalConditions != null">
         <td>AdvancedEnvironmentalConditions:</td>
         <td [ngClass]="(entry.advancedEnvironmentalConditions)?'green':'red'"><fa-icon [icon]="getBoolIcon(entry.advancedEnvironmentalConditions)"></fa-icon></td>
       </tr>
-      <tr>
+      <tr *ngIf="entry.terminalElement != null">
         <td>TerminalElement:</td>
         <td [ngClass]="(entry.terminalElement)?'green':'red'"><fa-icon [icon]="getBoolIcon(entry.terminalElement)"></fa-icon></td>
       </tr>

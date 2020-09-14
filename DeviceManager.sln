@@ -8,17 +8,14 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeviceManager.Core", "DeviceManager.Core\DeviceManager.Core.csproj", "{F25621A4-1A29-4D2A-968C-3DEDA7B1D8D0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Solution Items", "_Solution Items", "{6E814040-872F-4D70-ABFA-B1B86E8FEF6B}"
-	ProjectSection(SolutionItems) = preProject
-		CheatSheet.txt = CheatSheet.txt
-	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeviceManager.API", "DeviceManager.API\DeviceManager.API.csproj", "{A4FEFAB9-ACB1-4C70-B58C-BFBF53399102}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeviceManager.API", "DeviceManager.API\DeviceManager.API.csproj", "{A4FEFAB9-ACB1-4C70-B58C-BFBF53399102}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{C9DBCCEE-C5E8-498E-9DB2-CF10BF17AF34}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeviceManager.Testing.Core", "DeviceManager.Testing.Core\DeviceManager.Testing.Core.csproj", "{B5E74A54-1BE7-428F-8051-F33E132E66DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeviceManager.Testing.Core", "DeviceManager.Testing.Core\DeviceManager.Testing.Core.csproj", "{B5E74A54-1BE7-428F-8051-F33E132E66DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeviceManager.Testing.API", "DeviceManager.Testing.API\DeviceManager.Testing.API.csproj", "{5DF7E87B-A8FA-4E65-916E-F79F6012BEED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeviceManager.Testing.API", "DeviceManager.Testing.API\DeviceManager.Testing.API.csproj", "{5DF7E87B-A8FA-4E65-916E-F79F6012BEED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
