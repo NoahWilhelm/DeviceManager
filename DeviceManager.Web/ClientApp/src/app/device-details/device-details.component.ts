@@ -14,8 +14,6 @@ export class DeviceDetailsComponent implements OnInit {
 
   entryId: number;
   entry: Device;
-  isInEditMode: boolean = false;
-  editButtonText: string = "Bearbeiten";
   
   backIcon = faArrowLeft;
   
@@ -45,17 +43,6 @@ export class DeviceDetailsComponent implements OnInit {
     this.router.navigateByUrl("");
   }
 
-  editButtonClick() {
-
-    if (this.isInEditMode) {
-      this.editButtonText = "Bearbeiten";
-      this.isInEditMode = false;
-    } else {
-      this.editButtonText = "Fertig";
-      this.isInEditMode = true;
-    }
-
-  }
 
   getBoolIcon(value: boolean) {
 
