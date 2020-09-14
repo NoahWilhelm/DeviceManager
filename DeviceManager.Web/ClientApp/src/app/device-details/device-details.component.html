@@ -37,8 +37,12 @@
         <td>{{ entry.rotationAxisNumber }}</td>
       </tr>
       <tr>
+        <td>PositionAxisNumber:</td>
+        <td>{{ entry.positionAxisNumber }}</td>
+      </tr>
+      <tr>
         <td>Failsafe:</td>
-        <td [ngClass]="(entry.failsafe)?'green':'red'"><fa-icon [icon]="getBoolIcon(entry.failsafe)" ></fa-icon></td>
+        <td [ngClass]="(entry.failsafe)?'green':'red'"><fa-icon [icon]="getBoolIcon(entry.failsafe)"></fa-icon></td>
       </tr>
       <tr>
         <td>InsertInto19InchCabinet:</td>
