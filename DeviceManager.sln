@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeviceManager.Testing.Core"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeviceManager.Testing.API", "DeviceManager.Testing.API\DeviceManager.Testing.API.csproj", "{5DF7E87B-A8FA-4E65-916E-F79F6012BEED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeviceManager.Testing.Web.UI", "DeviceManager.Testing.Web.UI\DeviceManager.Testing.Web.UI.csproj", "{4013F248-C352-4CFB-A72A-503C1760CF3E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{5DF7E87B-A8FA-4E65-916E-F79F6012BEED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5DF7E87B-A8FA-4E65-916E-F79F6012BEED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5DF7E87B-A8FA-4E65-916E-F79F6012BEED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4013F248-C352-4CFB-A72A-503C1760CF3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4013F248-C352-4CFB-A72A-503C1760CF3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4013F248-C352-4CFB-A72A-503C1760CF3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4013F248-C352-4CFB-A72A-503C1760CF3E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +56,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{B5E74A54-1BE7-428F-8051-F33E132E66DA} = {C9DBCCEE-C5E8-498E-9DB2-CF10BF17AF34}
 		{5DF7E87B-A8FA-4E65-916E-F79F6012BEED} = {C9DBCCEE-C5E8-498E-9DB2-CF10BF17AF34}
+		{4013F248-C352-4CFB-A72A-503C1760CF3E} = {C9DBCCEE-C5E8-498E-9DB2-CF10BF17AF34}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1C4C3D8B-9C6D-4B61-9AB3-4E4F8CBC7625}

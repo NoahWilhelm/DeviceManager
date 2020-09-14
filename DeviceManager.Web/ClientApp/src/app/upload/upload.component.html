@@ -1,2 +1,2 @@
 <button class="btn btn-primary" (click)="startUpload()">Geräte hinzufügen</button>
-<input type="file" #uploadInput accept="application/JSON" style="display: none;" (change)="filesChanged($event.target.files)">
+<input type="file" #uploadInput accept="application/JSON" id="uploadInput" style="display: none;" (change)="filesChanged($event.target.files)">

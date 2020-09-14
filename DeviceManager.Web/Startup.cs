@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.IO;
 
 namespace DeviceManager.Web
 {
@@ -56,7 +57,7 @@ namespace DeviceManager.Web
 
             app.UseSpa(spa =>
             {
-                spa.Options.SourcePath = "ClientApp";
+                spa.Options.SourcePath = Path.Combine(env.ContentRootPath, "ClientApp");
 
                 if (env.IsDevelopment())
                 {
